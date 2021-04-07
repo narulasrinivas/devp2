@@ -1,0 +1,50 @@
+
+> LUIS application information
+> !# @app.versionId = 0.1
+> !# @app.culture = en-us
+> !# @app.luis_schema_version = 3.2.0
+
+
+> # Intent definitions
+
+# VSN
+- Vishnu sahasra sloka 1
+- Vishnu Sahasranama sloka 1
+- VSN shloka 1
+- Sri Vishnu Sahasra nama shloka 1
+- Sloka VSN 1
+- VSN 1
+- Vishnu Sahasranamam slokas
+- VSN
+
+
+# BG
+- BG ch 1 sloka 47
+- BG chapter 1 sloka 47
+- Bhagavad Gita Chapter 1 sloka 47
+- BG ch 1 shloka 47
+- Bagavad geeta ch 1 shloka 47
+- Bagavad gita ch 1 sloka 47
+- bg
+- Bhagavad Gi:tha Slokas
+
+
+> # Entity definitions
+
+
+> # PREBUILT Entity definitions
+
+
+> # Phrase list definitions
+
+
+> # List entities
+
+> # RegEx entities
+
+
+
+
+> Source: cross training. Please do not edit these directly!
+# DeferToRecognizer_QnA_DevManasP2
+- Hello

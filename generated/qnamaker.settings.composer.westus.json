@@ -1,0 +1,8 @@
+{
+    "qna": {
+        "BagavatGitaDialog_en_us_qna": "ffa71c4e-3975-47e7-952d-73186e113145",
+        "hostname": "https://devmanas1-qnahost.azurewebsites.net/qnamaker",
+        "DevManasP2_en_us_qna": "ffa71c4e-3975-47e7-952d-73186e113145",
+        "VishnuDialog_en_us_qna": "ffa71c4e-3975-47e7-952d-73186e113145"
+    }
+}

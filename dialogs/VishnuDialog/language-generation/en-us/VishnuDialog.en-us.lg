@@ -1,0 +1,20 @@
+[import](common.lg)
+
+# TextInput_Prompt_B3J5rg()
+[Activity
+    Text = ${VSNMessage()}
+]
+
+# TextInput_Prompt_fGhzgm()
+[Activity
+    Text = ${expandText(@answer)}
+    SuggestedActions = ${foreach(turn.recognized.answers[0].context.prompts, x, x.displayText)}
+]
+
+# SendActivity_LiKka7()
+- ${expandText(@answer)}
+
+# SendActivity_0wnxBA()
+[Activity
+    Text = ${UnKnownMessage()}
+]

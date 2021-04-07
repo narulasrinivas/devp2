@@ -1,0 +1,30 @@
+[import](common.lg)
+
+# TextInput_Prompt_NvnTAo()
+[Activity
+    Text = ${BGMessage()}
+]
+
+# TextInput_Prompt_TFhgPX()
+[Activity
+    Text = ${expandText(@answer)}
+    SuggestedActions = ${foreach(turn.recognized.answers[0].context.prompts, x, x.displayText)}
+]
+
+# SendActivity_LTnZb4()
+- ${expandText(@answer)}
+
+# SendActivity_Z1QYja()
+[Activity
+    Text = ${UnKnownMessage()}
+]
+
+# LogAction_Text_izTMCh()
+[Activity
+    Text = False : count(turn.recognized.answers[0].context.prompts) 
+]
+
+# LogAction_Text_PCeQHX()
+[Activity
+    Text = True : count(turn.recognized.answers[0].context.prompts) 
+]

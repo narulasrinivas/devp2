@@ -1,0 +1,155 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "IZVeYX",
+    "name": "VishnuDialog",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "ETrpbp"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "B3J5rg"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "prompt": "${TextInput_Prompt_B3J5rg()}"
+        },
+        {
+          "$kind": "Microsoft.QnAMakerDialog",
+          "$designer": {
+            "id": "tSpAwl"
+          },
+          "knowledgeBaseId": "=settings.qna.knowledgebaseid",
+          "endpointKey": "=settings.qna.endpointkey",
+          "hostname": "=settings.qna.hostname",
+          "noAnswer": "Sorry, I did not find an answer.",
+          "threshold": 0.3,
+          "activeLearningCardTitle": "Did you mean:",
+          "cardNoMatchText": "None of the above.",
+          "cardNoMatchResponse": "Thanks for the feedback.",
+          "top": 3,
+          "isTest": false
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnQnAMatch",
+      "$designer": {
+        "id": "ZIdyRI"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "xSj8yX"
+          },
+          "condition": "count(turn.recognized.answers[0].context.prompts) > 0",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "UWf9xS"
+              },
+              "property": "dialog.qnaContext",
+              "value": "=turn.recognized.answers[0].context.prompts"
+            },
+            {
+              "$kind": "Microsoft.TextInput",
+              "$designer": {
+                "id": "KAbVE7"
+              },
+              "maxTurnCount": 3,
+              "alwaysPrompt": true,
+              "allowInterruptions": false,
+              "prompt": "${TextInput_Prompt_fGhzgm()}",
+              "property": "turn.qnaMultiTurnResponse"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "Uy6ZK8"
+              },
+              "property": "turn.qnaMatchFromContext",
+              "value": "=where(dialog.qnaContext, item, item.displayText == turn.qnaMultiTurnResponse)"
+            },
+            {
+              "$kind": "Microsoft.DeleteProperty",
+              "$designer": {
+                "id": "2JA7dn"
+              },
+              "property": "dialog.qnaContext"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "3bEv7u"
+              },
+              "condition": "turn.qnaMatchFromContext && count(turn.qnaMatchFromContext) > 0",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "T8Ap4b"
+                  },
+                  "property": "turn.qnaIdFromPrompt",
+                  "value": "=turn.qnaMatchFromContext[0].qnaId"
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.EmitEvent",
+              "$designer": {
+                "id": "Rvpo3n"
+              },
+              "eventName": "activityReceived",
+              "eventValue": "=turn.activity"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "v1lfUO"
+              },
+              "activity": "${SendActivity_LiKka7()}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "0iDDBi"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "0wnxBA"
+          },
+          "activity": "${SendActivity_0wnxBA()}"
+        }
+      ]
+    }
+  ],
+  "generator": "VishnuDialog.lg",
+  "recognizer": "VishnuDialog.lu.qna",
+  "id": "VishnuDialog"
+}

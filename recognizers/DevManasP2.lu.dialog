@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_DevManasP2",
+  "recognizers": {
+    "en-us": "DevManasP2.en-us.lu",
+    "": "DevManasP2.en-us.lu"
+  }
+}

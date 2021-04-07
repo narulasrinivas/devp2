@@ -1,0 +1,9 @@
+# WelcomeUser
+- Welcome to the EmptyBot sample
+
+# VSNMessage()
+- Please type VSN 1/ Vishnu 1/ Vishnu Shasranamam 1
+# BGMessage()
+- Please type BG ch1 sloka 1/ bg ch1 sloka1/ BhagavatGita ch1 sloka 1
+# UnKnownMessage()
+-Please rephrase your text appropritely

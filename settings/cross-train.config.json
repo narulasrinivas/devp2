@@ -1,0 +1,13 @@
+{
+  "DevManasP2.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "VSN": [
+        "VishnuDialog.en-us"
+      ],
+      "BG": [
+        "BagavatGitaDialog.en-us"
+      ]
+    }
+  }
+}

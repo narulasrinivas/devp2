@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "QnA_VishnuDialog",
+  "recognizers": {
+    "en-us": "VishnuDialog.en-us.qna",
+    "": "VishnuDialog.en-us.qna"
+  }
+}

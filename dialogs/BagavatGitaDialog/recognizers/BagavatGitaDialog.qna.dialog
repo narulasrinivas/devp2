@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "QnA_BagavatGitaDialog",
+  "recognizers": {
+    "en-us": "BagavatGitaDialog.en-us.qna",
+    "": "BagavatGitaDialog.en-us.qna"
+  }
+}

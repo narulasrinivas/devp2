@@ -1,0 +1,16 @@
+{
+    "luis": {
+        "BagavatGitaDialog_en_us_lu": {
+            "appId": "87d145f0-d2c4-4ebd-8a33-97cc5d20c277",
+            "version": "0.1"
+        },
+        "VishnuDialog_en_us_lu": {
+            "appId": "962ba21b-8a40-4084-b251-b8fba0488d07",
+            "version": "0.1"
+        },
+        "DevManasP2_en_us_lu": {
+            "appId": "750ec84d-2b83-46ca-9027-d1b4e458b3b5",
+            "version": "0.2"
+        }
+    }
+}
